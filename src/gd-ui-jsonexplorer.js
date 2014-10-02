@@ -98,7 +98,7 @@ angular.module('gd.ui.jsonexplorer', [])
     
     				if (hasContents) {
     					if (collapsed) {
-    						output = '[<ul class="array collapsible" style="display:none;">' + output + '</ul><span class="ellipsis">...</span>]';
+    						output = '[<ul class="array collapsible" style="display:none;">' + output + '</ul>]';
     					} else {
     						output = '[<ul class="array collapsible">' + output + '</ul><span style="display:none" class="ellipsis">...</span>]';
     					}
@@ -111,7 +111,7 @@ angular.module('gd.ui.jsonexplorer', [])
 
 				formatter.objectToHtml = function (json) {
 					var hasContents = false;
-    				var output = '';
+    				var output = '<li>';
     				var numProps = 0;
     				for (var prop in json ) {
       					numProps++;
@@ -134,7 +134,7 @@ angular.module('gd.ui.jsonexplorer', [])
 	    					if (JSON.stringify(json) != val) {
 	    						output = '{<ul class="obj collapsible" style="display:none;">' + output + '</ul><span class="ellipsis">...</span>}';
 	    					} else {
-	    						output = '{<ul class="obj">' + output + '</ul><span style="display:none" class="ellipsis">...</span>}';
+	    						output = '{<ul class="obj collapsible" style="display:none;">' + output + '</ul><span class="ellipsis">...</span>}';
 	    					}
 	      				} else {
 	      					output = '{<ul class="obj collapsible">' + output + '</ul>}';
@@ -213,7 +213,7 @@ angular.module('gd.ui.jsonexplorer', [])
 				for (var i = 0; i < collections.length; i++) {
 					var collectionItem = collections[i];
 					if (collectionItem.className.indexOf('collapsible') != -1) {
-						if (collectionItem.parentNode.nodeName == 'LI') {
+//						if (collectionItem.parentNode.nodeName == 'LI') {
 							var collapser = document.createElement('div');
 							collapser.className = 'collapser';
 							if (collapsed) {
@@ -223,7 +223,7 @@ angular.module('gd.ui.jsonexplorer', [])
 							}
 							collapser.addEventListener('click', collapse, false);
 							collectionItem.parentNode.insertBefore(collapser, collectionItem.parentNode.firstChild);
-						}						
+//						}
 					}
 				}
 			});
