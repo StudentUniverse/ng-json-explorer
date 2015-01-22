@@ -1,6 +1,6 @@
 {
   "name": "ng-json-explorer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": ["src/gd-ui-jsonexplorer.css", "src/gd-ui-jsonexplorer.js"],
   "ignore": [
     ".jshintrc",
