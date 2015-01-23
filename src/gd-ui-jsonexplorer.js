@@ -121,7 +121,7 @@ angular.module('gd.ui.jsonexplorer', [])
       					hasContents = true;
       					output += '<li>' + 
       					'<span class="prop"><span class="q">"</span>' + this.jsString(prop) +
-                			'<span class="q">"</span></span>: ' + this.valueToHtml(json[prop]);
+                            '<span class="q">"</span></span>: ' + '<span id="'+ this.jsString(prop) + '">' + this.valueToHtml(json[prop]) + '</span>';
 	      				if (numProps > 1) {
 	        				output += ',';
 	      				}
